@@ -1,0 +1,17 @@
+# =========================================================================
+# CADDY REVERSE PROXY CONFIGURATION FOR POLYMASTER QUANTUM
+# Replace 'trade.yourdomain.com' with your actual domain name.
+# Caddy automatically provisions and renews free Let's Encrypt SSL certificates.
+# =========================================================================
+
+# trade.yourdomain.com {
+#     reverse_proxy polymaster-engine:3000
+#     encode gzip zstd
+#     header {
+#         # Institutional Security Headers
+#         Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+#         X-Content-Type-Options "nosniff"
+#         X-Frame-Options "DENY"
+#         Referrer-Policy "strict-origin-when-cross-origin"
+#     }
+# }

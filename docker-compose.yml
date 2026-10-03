@@ -1,0 +1,82 @@
+version: '3.8'
+
+# =========================================================================
+# POLYMASTER QUANTUM - 24/7 VPS DOCKER COMPOSE CONFIGURATION
+# Designed for continuous low-latency trading, auto-restart, and zero downtime
+# =========================================================================
+
+services:
+  # -----------------------------------------------------------------------
+  # Core Trading & Execution Engine
+  # -----------------------------------------------------------------------
+  polymaster-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: polymaster-quantum
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+      # Locked Creator Commission Public Address (Solana SPL-USDT)
+      - VITE_CREATOR_FEE_WALLET=DME5GLjjttYLoMcRcd7HjCUZHoMhKoYE2uMusefXcQET
+      - CREATOR_PERFORMANCE_FEE_RATE=0.025
+      # Optional: Influx of custom exchange API keys / RPC endpoints
+      - SOLANA_RPC_URL=${SOLANA_RPC_URL:-https://api.mainnet-beta.solana.com}
+      - POLYGON_RPC_URL=${POLYGON_RPC_URL:-https://polygon-rpc.com}
+      - JITO_RELAYER_URL=${JITO_RELAYER_URL:-https://mainnet.block-engine.jito.wtf}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2048M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    networks:
+      - polymaster-net
+
+  # -----------------------------------------------------------------------
+  # Optional: Automatic Reverse Proxy with Zero-Config Free SSL (Caddy)
+  # Uncomment below if you have a domain name pointed to your VPS IP
+  # -----------------------------------------------------------------------
+  # caddy:
+  #   image: caddy:2-alpine
+  #   container_name: polymaster-caddy
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile
+  #     - caddy_data:/data
+  #     - caddy_config:/config
+  #   depends_on:
+  #     - polymaster-engine
+  #   networks:
+  #     - polymaster-net
+
+networks:
+  polymaster-net:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
