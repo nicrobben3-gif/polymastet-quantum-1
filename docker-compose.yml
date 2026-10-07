@@ -1,0 +1,67 @@
+# =========================================================================
+# POLYMASTER QUANTUM - 24/7 VPS DOCKER COMPOSE CONFIGURATION
+# Designed for continuous low-latency trading, auto-restart, and zero downtime
+# =========================================================================
+
+services:
+  # -----------------------------------------------------------------------
+  # Core Trading & Execution Engine
+  # -----------------------------------------------------------------------
+  polymaster-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: polymaster-quantum
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+      - TRADING_MODE=${TRADING_MODE:-PAPER}
+      - LIVE_TRADING_ENABLED=${LIVE_TRADING_ENABLED:-false}
+      # Locked Creator Commission Public Address (Solana SPL-USDT)
+      - VITE_CREATOR_FEE_WALLET=GmRZNNRyzYZKatdCsSALmgyLksNX8Mx1XrJPCt1ZwUbm
+      - CREATOR_PERFORMANCE_FEE_RATE=0.05
+      # Prediction Market Credentials (Required ONLY for live execution)
+      - POLYMARKET_API_KEY=${POLYMARKET_API_KEY:-}
+      - POLYMARKET_API_SECRET=${POLYMARKET_API_SECRET:-}
+      - POLYMARKET_PASSPHRASE=${POLYMARKET_PASSPHRASE:-}
+      - KALSHI_API_KEY=${KALSHI_API_KEY:-}
+      - KALSHI_RSA_PRIVATE_KEY=${KALSHI_RSA_PRIVATE_KEY:-}
+      - SOLANA_PRIVATE_KEY=${SOLANA_PRIVATE_KEY:-}
+      # Blockchain RPC Endpoints & MEV Relayers
+      - SOLANA_RPC_URL=${SOLANA_RPC_URL:-https://api.mainnet-beta.solana.com}
+      - POLYGON_RPC_URL=${POLYGON_RPC_URL:-https://polygon-rpc.com}
+      - JITO_RELAYER_URL=${JITO_RELAYER_URL:-https://mainnet.block-engine.jito.wtf}
+      # Database
+      - DATABASE_URL=${DATABASE_URL:-}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2048M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    networks:
+      - polymaster-net
+
+networks:
+  polymaster-net:
+    driver: bridge

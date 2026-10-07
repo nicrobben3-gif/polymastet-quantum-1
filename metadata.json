@@ -1,0 +1,6 @@
+{
+  "name": "PolyMaster Quantum - Unified Multi-Strategy Trading Engine",
+  "description": "Institutional-grade multi-strategy trading and prediction market engine unifying PredictEngine, PolyCop, FORS Market, PolyClaw, PolyGun, TurbineFi, and PolyBot with a hard risk engine, unified order book, and real-time execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

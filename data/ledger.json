@@ -1,0 +1,298 @@
+{
+  "savedAt": "2026-10-05T08:46:32.984Z",
+  "orders": {
+    "ORD_1791189965758_62": {
+      "id": "ORD_1791189965758_62",
+      "clientOrderId": "CLI_1791189965758_657",
+      "symbol": "POLY:TEST_LIVE_TOKEN",
+      "venue": "polymarket",
+      "direction": "BUY",
+      "orderType": "MARKET",
+      "price": 0.5,
+      "size": 50,
+      "notionalUsd": 25,
+      "filledSize": 0,
+      "avgFillPrice": 0,
+      "status": "SUBMITTED",
+      "algorithm": "DIRECT",
+      "reduceOnly": false,
+      "postOnly": false,
+      "maxSlippageBps": 30,
+      "timestamp": 1791189965758,
+      "updatedAt": 1791189965758,
+      "strategyId": "manual",
+      "feesPaidUsd": 0,
+      "slippageIncurredBps": 0,
+      "simulatedLatencyMs": 0
+    },
+    "ORD_1791189965759_166": {
+      "id": "ORD_1791189965759_166",
+      "clientOrderId": "CLI_1791189965759_475",
+      "symbol": "POLY:IDEMPOTENT_TEST",
+      "venue": "polymarket",
+      "direction": "BUY",
+      "orderType": "MARKET",
+      "price": 0.5,
+      "size": 25,
+      "notionalUsd": 12.5,
+      "filledSize": 25,
+      "avgFillPrice": 0.5,
+      "status": "FILLED",
+      "algorithm": "DIRECT",
+      "reduceOnly": false,
+      "postOnly": false,
+      "maxSlippageBps": 30,
+      "timestamp": 1791189965759,
+      "updatedAt": 1791189965759,
+      "strategyId": "manual",
+      "feesPaidUsd": 0.0063,
+      "slippageIncurredBps": 4,
+      "simulatedLatencyMs": 0
+    },
+    "ORD_PERSIST_1791189965760": {
+      "id": "ORD_PERSIST_1791189965760",
+      "symbol": "POLY:PERSIST_TEST",
+      "status": "SUBMITTED",
+      "size": 100,
+      "updatedAt": 1791189965760
+    },
+    "ORD_1791189992981_900": {
+      "id": "ORD_1791189992981_900",
+      "clientOrderId": "CLI_1791189992981_933",
+      "symbol": "POLY:TEST_LIVE_TOKEN",
+      "venue": "polymarket",
+      "direction": "BUY",
+      "orderType": "MARKET",
+      "price": 0.5,
+      "size": 50,
+      "notionalUsd": 25,
+      "filledSize": 0,
+      "avgFillPrice": 0,
+      "status": "SUBMITTED",
+      "algorithm": "DIRECT",
+      "reduceOnly": false,
+      "postOnly": false,
+      "maxSlippageBps": 30,
+      "timestamp": 1791189992981,
+      "updatedAt": 1791189992982,
+      "strategyId": "manual",
+      "feesPaidUsd": 0,
+      "slippageIncurredBps": 0,
+      "simulatedLatencyMs": 0
+    },
+    "ORD_1791189992982_346": {
+      "id": "ORD_1791189992982_346",
+      "clientOrderId": "CLI_1791189992982_473",
+      "symbol": "POLY:IDEMPOTENT_TEST",
+      "venue": "polymarket",
+      "direction": "BUY",
+      "orderType": "MARKET",
+      "price": 0.5,
+      "size": 25,
+      "notionalUsd": 12.5,
+      "filledSize": 25,
+      "avgFillPrice": 0.5,
+      "status": "FILLED",
+      "algorithm": "DIRECT",
+      "reduceOnly": false,
+      "postOnly": false,
+      "maxSlippageBps": 30,
+      "timestamp": 1791189992982,
+      "updatedAt": 1791189992983,
+      "strategyId": "manual",
+      "feesPaidUsd": 0.0063,
+      "slippageIncurredBps": 4,
+      "simulatedLatencyMs": 0
+    },
+    "ORD_PERSIST_1791189992984": {
+      "id": "ORD_PERSIST_1791189992984",
+      "symbol": "POLY:PERSIST_TEST",
+      "status": "SUBMITTED",
+      "size": 100,
+      "updatedAt": 1791189992984
+    }
+  },
+  "fills": {
+    "FILL_PAPER_1791189965759_277": {
+      "id": "FILL_PAPER_1791189965759_277",
+      "orderId": "ORD_1791189965759_166",
+      "symbol": "POLY:IDEMPOTENT_TEST",
+      "venue": "polymarket",
+      "price": 0.5,
+      "size": 25,
+      "feeUsd": 0.0063,
+      "liquidity": "TAKER",
+      "timestamp": 1791189965759,
+      "createdAt": 1791189965759
+    },
+    "FILL_PERSIST_1791189965760": {
+      "id": "FILL_PERSIST_1791189965760",
+      "orderId": "ORD_PERSIST_1791189965760",
+      "symbol": "POLY:PERSIST_TEST",
+      "price": 0.52,
+      "size": 100,
+      "feeUsd": 0.05,
+      "createdAt": 1791189965760
+    },
+    "FILL_PAPER_1791189992982_122": {
+      "id": "FILL_PAPER_1791189992982_122",
+      "orderId": "ORD_1791189992982_346",
+      "symbol": "POLY:IDEMPOTENT_TEST",
+      "venue": "polymarket",
+      "price": 0.5,
+      "size": 25,
+      "feeUsd": 0.0063,
+      "liquidity": "TAKER",
+      "timestamp": 1791189992982,
+      "createdAt": 1791189992983
+    },
+    "FILL_PERSIST_1791189992984": {
+      "id": "FILL_PERSIST_1791189992984",
+      "orderId": "ORD_PERSIST_1791189992984",
+      "symbol": "POLY:PERSIST_TEST",
+      "price": 0.52,
+      "size": 100,
+      "feeUsd": 0.05,
+      "createdAt": 1791189992984
+    }
+  },
+  "deposits": {},
+  "audit": [
+    {
+      "id": "AUDIT_1791189992984_p70c",
+      "timestamp": "2026-10-05T08:46:32.984Z",
+      "eventType": "FILL_EXECUTED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "fillId": "FILL_PERSIST_1791189992984",
+        "price": 0.52,
+        "size": 100
+      }
+    },
+    {
+      "id": "AUDIT_1791189992984_0wzj",
+      "timestamp": "2026-10-05T08:46:32.984Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_PERSIST_1791189992984",
+        "symbol": "POLY:PERSIST_TEST"
+      }
+    },
+    {
+      "id": "AUDIT_1791189992983_77ze",
+      "timestamp": "2026-10-05T08:46:32.983Z",
+      "eventType": "FILL_EXECUTED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "fillId": "FILL_PAPER_1791189992982_122",
+        "price": 0.5,
+        "size": 25
+      }
+    },
+    {
+      "id": "AUDIT_1791189992983_q222",
+      "timestamp": "2026-10-05T08:46:32.983Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_1791189992982_346",
+        "symbol": "POLY:IDEMPOTENT_TEST"
+      }
+    },
+    {
+      "id": "AUDIT_1791189992982_u49k",
+      "timestamp": "2026-10-05T08:46:32.982Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_1791189992982_346",
+        "symbol": "POLY:IDEMPOTENT_TEST"
+      }
+    },
+    {
+      "id": "AUDIT_1791189992982_ibsa",
+      "timestamp": "2026-10-05T08:46:32.982Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_1791189992981_900",
+        "symbol": "POLY:TEST_LIVE_TOKEN"
+      }
+    },
+    {
+      "id": "AUDIT_1791189965760_xoxk",
+      "timestamp": "2026-10-05T08:46:05.760Z",
+      "eventType": "FILL_EXECUTED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "fillId": "FILL_PERSIST_1791189965760",
+        "price": 0.52,
+        "size": 100
+      }
+    },
+    {
+      "id": "AUDIT_1791189965760_jjle",
+      "timestamp": "2026-10-05T08:46:05.760Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_PERSIST_1791189965760",
+        "symbol": "POLY:PERSIST_TEST"
+      }
+    },
+    {
+      "id": "AUDIT_1791189965759_bdwy",
+      "timestamp": "2026-10-05T08:46:05.759Z",
+      "eventType": "FILL_EXECUTED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "fillId": "FILL_PAPER_1791189965759_277",
+        "price": 0.5,
+        "size": 25
+      }
+    },
+    {
+      "id": "AUDIT_1791189965759_hcvp",
+      "timestamp": "2026-10-05T08:46:05.759Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_1791189965759_166",
+        "symbol": "POLY:IDEMPOTENT_TEST"
+      }
+    },
+    {
+      "id": "AUDIT_1791189965759_89dx",
+      "timestamp": "2026-10-05T08:46:05.759Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_1791189965759_166",
+        "symbol": "POLY:IDEMPOTENT_TEST"
+      }
+    },
+    {
+      "id": "AUDIT_1791189965758_71gh",
+      "timestamp": "2026-10-05T08:46:05.758Z",
+      "eventType": "ORDER_RECORDED",
+      "severity": "INFO",
+      "component": "ExecutionEngine",
+      "payload": {
+        "orderId": "ORD_1791189965758_62",
+        "symbol": "POLY:TEST_LIVE_TOKEN"
+      }
+    }
+  ]
+}
